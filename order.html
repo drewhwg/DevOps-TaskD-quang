@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Assignment 2" />
+    <meta name="author" content="Hoang Minh Quang" />
+    <title>Bruno's Pizzeria: We serve authentic Italian taste!</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div>
+            <a href="index.html">Bruno's Pizzeria</a>
+        </div>
+        <div id="right">
+            <a class="selected" href="order.html">Order</a>
+            <a href="register.html">Register</a>
+            <a href="features.html">Features</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1 style="font-family: 'Calistoga', cursive;">Bruno's Pizzeria</h1>
+    </header>
+
+    <!--pictures slideshow-->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+
+            <img src="images/pizza1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="images/pizza2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+
+            <img src="images/pizza3.jpg" style="width:100%">
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <section class="order">
+        <h2 id="ordertt">Order Pizza</h2>
+
+        <form id="regform" method="post" action="http://mercury.ict.swin.edu.au/it000000/formtest.php">
+            <div class="row">
+                <div>
+                    <h3>Pickup or Delivery?</h3>
+
+                    <input type="radio" name="delivery_type" id="delivery_type_pickup" value="Pickup" onclick="javascript:order('delivery_type', '#delivery-form');">
+                    <label class="button l" for="delivery_type_pickup">Pickup</label>
+
+                    <input type="radio" name="delivery_type" id="delivery_type_delivery" value="Delivery" onclick="javascript:order('delivery_type', '#delivery-form');">
+                    <label class="button r" for="delivery_type_delivery">Delivery</label>
+
+                    <div id="delivery-form">
+                        <h2>Delivery Address</h2>
+
+                        <p>Address</p>
+                        <input id="delivery_address" type="text" name="delivery_address" placeholder="2 Duong Khue" />
+
+                        <p>District</p>
+                        <input id="delivery_dist" type="text" name="delivery_suburb" placeholder="Bac Tu Liem" />
+
+                        <p>PostCode</p>
+                        <input id="delivery_postcode" type="text" name="delivery_postcode" placeholder="100000" />
+
+                        <input type="checkbox" onclick="sada(); sadaalert();" id="sadab" /><label for="sadab">Same as Delivery Address</label>
+                    </div>
+
+                    <h2>Billing Address</h2>
+
+                    <p>Address</p>
+                    <input id="billing_address" type="text" name="billing_address" placeholder="2 Duong Khue" />
+
+                    <p>District</p>
+                    <input id="billing_dist" type="text" name="billing_suburb" placeholder="Bac Tu Liem" />
+
+                    <p>PostCode</p>
+                    <input id="billing_postcode" type="text" name="billing_postcode" placeholder="100000" />
+                </div>
+
+                <div>
+                    <h3>Your Pizza Order</h3>
+                    <textarea name="pizza_order" placeholder="1 Past Pizza"></textarea>
+
+                    <h2>Contact Information</h2>
+
+                    <p>Phone Number</p>
+                    <input id="phone" type="text" name="phone" placeholder="02431234567" />
+
+                    <p>Email Address</p>
+                    <input id="email" type="email" name="email" placeholder="example@gmail.com" />
+
+                    <p>Pay on Pickup or Online?</p>
+
+                    <input type="radio" name="payment_type" id="payment_type_pickup" value="Pickup" onclick="javascript:order('payment_type', '#payment-form');">
+                    <label class="button l" for="payment_type_pickup">Pickup</label>
+
+                    <input type="radio" name="payment_type" id="payment_type_online" value="Online" onclick="javascript:order('payment_type', '#payment-form');">
+                    <label class="button r" for="payment_type_online">Online</label>
+
+                    <div id="payment-form">
+                        <h2>Payment Information</h2>
+
+                        <p>Full Name</p>
+                        <input id="full_name" type="text" name="full_name" placeholder="Tom Cruise">
+
+                        <p>Card Type</p>
+
+                        <input type="radio" name="visa" id="visa" value="VISA" onclick="javascript: cc_1();">
+                        <label class="cardlb" for="visa"><img src="images/visa.jpg" alt="VISA" /></label>
+                        
+                        <input type="radio" name="mc" id="mc" value="MasterCard" onclick="javascript: cc_2();">
+                        <label class="cardlb" for="mc"><img src="images/mastercard.jpg" alt="MasterCard" /></label>
+                        
+                        <input type="radio" name="amex" id="amex" value="American Express" onclick="javascript:cc_3()">
+                        <label class="cardlb" for="amex"><img src="images/amex.jpg" alt="AmEx" /></label>
+
+                        <p>Credit Card</p>
+                        <input id="cardno" type="text" name="cardno" placeholder="0000 0000 0000 0000">
+
+                        <p>Expiry</p>
+                        <select name="ccmon" id="ccmon">
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select name="ccyear" id="ccyear">
+                            <option value="18"> 2018</option>
+                            <option value="19"> 2019</option>
+                            <option value="20"> 2020</option>
+                            <option value="21"> 2021</option>
+                            <option value="22"> 2022</option>
+                            <option value="23"> 2023</option>
+                        </select>
+
+                        <p>CVV</p>
+                        <input id="cvv" type="text" name="cvv" placeholder="000" />
+                    </div>
+                </div>
+                <div>
+                    <button class="button l" type="submit" value="Submit Order" />Submit Order</button>
+                    <button class="button r" type="reset" value="Reset" />Reset</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="info">
+            <h3>Address</h3>
+            <p>2 Duong Khue st. </p>
+        </div>
+
+        <div class="footer2">
+            <p style="text-align:center; padding:20px">
+                © 2019 Bruno's Pizzeria (Website by Quang Hoang)
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
