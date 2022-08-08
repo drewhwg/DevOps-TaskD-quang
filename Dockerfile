@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 #Port Number
-EXPOSE 9000
+EXPOSE 8086
 
 #Run App
 CMD ["node", "app.js"]

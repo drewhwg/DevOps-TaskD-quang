@@ -1,0 +1,15 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Minh Quang Hoang - 103295032",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0"
+    }
+}
